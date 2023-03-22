@@ -1,0 +1,20 @@
+.sign-box {
+  display: flex;
+  width: 880px;
+  height: 550px;
+  margin: auto;
+  margin-top: 5rem;
+  border: 1px solid red;
+}
+
+.main-contents {
+  width: 550px;
+  height: 100%;
+  border: 1px solid blue;
+}
+
+.sub-contents {
+  width: 330px;
+  height: 100%;
+  border: 1px solid green;
+}
