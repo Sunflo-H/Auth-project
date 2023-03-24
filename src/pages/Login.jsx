@@ -33,7 +33,6 @@ export default function Login() {
               <div className={styles["btn-box"]}>
                 <button className={`${styles.oauth} ${styles.google}`}>
                   <FcGoogle className={styles["oauth-icon"]} />
-
                   <span>Google로 시작하기</span>
                 </button>
                 <button className={`${styles.oauth} ${styles.kakao}`}>

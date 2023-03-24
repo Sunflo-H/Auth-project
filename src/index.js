@@ -17,19 +17,23 @@ const router = createBrowserRouter([
     path: "/app",
     element: <App />,
   },
+  // {
+  //   path: "/user/",
+  //   element: <User />,
+  //   children: [
+  //     {
+  //       path: "/user/profile",
+  //       element: <Profile />,
+  //     },
+  //     {
+  //       path: "/user/management",
+  //       element: <Management />,
+  //     },
+  //   ],
+  // },
   {
-    path: "/user/",
-    element: <User />,
-    children: [
-      {
-        path: "/user/profile",
-        element: <Profile />,
-      },
-      {
-        path: "/user/management",
-        element: <Management />,
-      },
-    ],
+    path: "/user/profile",
+    element: <Profile />,
   },
 ]);
 const root = ReactDOM.createRoot(document.getElementById("root"));
