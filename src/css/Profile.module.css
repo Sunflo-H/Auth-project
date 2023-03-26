@@ -6,11 +6,94 @@
 }
 
 .main {
-  width: 550px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
   height: 400px;
   background-color: white;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .image-box {
-  border: 1px solid red;
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+}
+
+.info {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.info input {
+  max-width: 145px;
+  border: 1px solid black;
+}
+
+input[name="name"] {
+  height: 32px;
+  padding: 0 2px;
+}
+
+input[name="email"] {
+  box-sizing: border-box;
+  height: 23px;
+  padding: 0 4px;
+  margin-top: 10px;
+}
+.name {
+  position: relative;
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: 1px solid transparent;
+}
+
+.email {
+  position: relative;
+  display: inline-block;
+  margin-top: 10px;
+  font-weight: bold;
+  border: 1px solid transparent;
+}
+
+.edit {
+  position: absolute;
+  margin-top: 10px;
+  color: white;
+  font-weight: bold;
+}
+
+.management {
+  position: absolute;
+  right: 10px;
+  margin-top: 10px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  margin-left: 5px;
+  transform: translateY(-50%);
+  display: none;
+  font-size: 0.8rem;
+  color: rgba(0, 0, 0, 0.264);
+}
+
+.name:hover .icon,
+.email:hover .icon {
+  display: inline;
 }
