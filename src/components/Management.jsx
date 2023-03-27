@@ -8,10 +8,12 @@ import Pagination from "./Pagination";
 const USER_PER_PAGE = 8;
 export default function Management() {
   const users = [];
+
   for (let i = 0; i < 100; i++) {
     users.push(i);
   }
   const [currentPage, setCurrentPage] = useState(1);
+  const lastPage = Math.ceil(users.length / USER_PER_PAGE);
   const handleChangePage = (newPage) => {
     setCurrentPage(newPage);
   };
@@ -25,8 +27,8 @@ export default function Management() {
           ))}
         </ul>
         <Pagination
-          count={Math.ceil(users.length / USER_PER_PAGE)}
           currentPage={currentPage}
+          lastPage={lastPage}
           onChange={handleChangePage}
         />
       </div>

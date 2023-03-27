@@ -9,25 +9,39 @@ import {
 
 const USER_PER_PAGE = 8;
 
-export default function Pagination({ count, currentPage, onChange }) {
-  const currentPages = getCurrentPages(currentPage);
+export default function Pagination({ currentPage, lastPage, onChange }) {
+  const currentPages = getCurrentPages(currentPage, lastPage);
+
   return (
     <div className={styles["page-box"]}>
       <div
         className={styles["page-btn"]}
-        onClick={() => onChange(currentPage - 1)}
+        onClick={() => {
+          if (currentPage === 1) return;
+          onChange(currentPage - 1);
+        }}
+      >
+        <MdOutlineKeyboardDoubleArrowLeft />
+      </div>
+      <div
+        className={styles["page-btn"]}
+        onClick={() => {
+          if (currentPage === 1) return;
+          onChange(currentPage - 1);
+        }}
       >
         <MdOutlineKeyboardArrowLeft />
       </div>
 
       <ul className={styles["page-num-box"]}>
-        {currentPages.map((page) => {
+        {currentPages.map((page, i) => {
           return (
             <li
               className={`${styles["page-num"]} ${
                 currentPage === page && styles.active
               } `}
               onClick={() => onChange(page)}
+              key={i}
             >
               {page}
             </li>
@@ -36,32 +50,33 @@ export default function Pagination({ count, currentPage, onChange }) {
       </ul>
       <div
         className={styles["page-btn"]}
-        onClick={() => onChange(currentPage + 1)}
+        onClick={() => {
+          if (currentPage === lastPage) return;
+          onChange(currentPage + 1);
+        }}
       >
         <MdOutlineKeyboardArrowRight />
+      </div>
+      <div
+        className={styles["page-btn"]}
+        onClick={() => {
+          if (currentPage === 1) return;
+          onChange(currentPage + 1);
+        }}
+      >
+        <MdOutlineKeyboardDoubleArrowRight />
       </div>
     </div>
   );
 }
-const getCurrentPages = (currentPage) => {
+const getCurrentPages = (currentPage, lastPage) => {
   const firstPage = Math.floor((currentPage - 1) / 5) * 5 + 1;
-  const currentPages = [
-    firstPage,
-    firstPage + 1,
-    firstPage + 2,
-    firstPage + 3,
-    firstPage + 4,
-  ];
+  const currentPages = [];
+  console.log(firstPage);
+  for (let i = 0; i < 5; i++) {
+    if (firstPage + i > lastPage) break;
+    else currentPages.push(firstPage + i);
+  }
+
   return currentPages;
-};
-
-const getMaxPage = (userNum) => {
-  /**
-   * * 회원수 100일때 MaxPage 구하기
-   * (회원수 / 보여질 유저수) 올림!
-   */
-
-  let result = Math.ceil(userNum / USER_PER_PAGE);
-
-  return result;
 };
