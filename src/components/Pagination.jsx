@@ -17,8 +17,8 @@ export default function Pagination({ currentPage, lastPage, onChange }) {
       <div
         className={styles["page-btn"]}
         onClick={() => {
-          if (currentPage === 1) return;
-          onChange(currentPage - 1);
+          if (Math.floor((currentPage - 1) / 5) === 0) return;
+          onChange((Math.floor((currentPage - 1) / 5) - 1) * 5 + 5);
         }}
       >
         <MdOutlineKeyboardDoubleArrowLeft />
@@ -60,8 +60,9 @@ export default function Pagination({ currentPage, lastPage, onChange }) {
       <div
         className={styles["page-btn"]}
         onClick={() => {
-          if (currentPage === 1) return;
-          onChange(currentPage + 1);
+          if (Math.floor((currentPage - 1) / 5) === Math.floor(lastPage / 5))
+            return;
+          onChange((Math.floor((currentPage - 1) / 5) + 1) * 5 + 1);
         }}
       >
         <MdOutlineKeyboardDoubleArrowRight />
@@ -69,6 +70,7 @@ export default function Pagination({ currentPage, lastPage, onChange }) {
     </div>
   );
 }
+
 const getCurrentPages = (currentPage, lastPage) => {
   const firstPage = Math.floor((currentPage - 1) / 5) * 5 + 1;
   const currentPages = [];
@@ -80,3 +82,5 @@ const getCurrentPages = (currentPage, lastPage) => {
 
   return currentPages;
 };
+
+const getNextPlusPage = (currentPage, lastPage) => {};
