@@ -50,6 +50,7 @@ ul {
 .page-num {
   padding: 2px 4px;
   margin: 2px;
+  cursor: pointer;
 }
 
 .page-num.active {
