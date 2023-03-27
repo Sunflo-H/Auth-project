@@ -3,20 +3,32 @@ import Card from "./Card";
 import styles from "../css/Management.module.css";
 
 import { Link } from "react-router-dom";
-import Pagenation from "./Pagenation";
+import Pagination from "./Pagination";
 
+const USER_PER_PAGE = 8;
 export default function Management() {
-  const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  const users = [];
+  for (let i = 0; i < 100; i++) {
+    users.push(i);
+  }
+  const [currentPage, setCurrentPage] = useState(1);
+  const handleChangePage = (newPage) => {
+    setCurrentPage(newPage);
+  };
+
   return (
     <div className={styles.position}>
       <div className={styles.main}>
         <ul className="ul">
-          {arr.map((item, i) => {
-            if (i > 7) return;
-            return <Card item={item} key={i} />;
-          })}
+          {getCurrentUsers(users, currentPage).map((item, i) => (
+            <Card item={item} key={i} />
+          ))}
         </ul>
-        <Pagenation />
+        <Pagination
+          count={Math.ceil(users.length / USER_PER_PAGE)}
+          currentPage={currentPage}
+          onChange={handleChangePage}
+        />
       </div>
       <Link to="/user/profile" className={styles.profile}>
         내 계정관리
@@ -24,3 +36,21 @@ export default function Management() {
     </div>
   );
 }
+
+const getCurrentUsers = (users, currentPage) => {
+  const indexOfLastUser = currentPage * USER_PER_PAGE;
+  const indexOfFirstUser = indexOfLastUser - USER_PER_PAGE;
+  const result = users.slice(indexOfFirstUser, indexOfLastUser);
+  return result;
+};
+
+const getMaxPage = (userNum) => {
+  /**
+   * * 회원수 100일때 MaxPage 구하기
+   * (회원수 / 보여질 유저수) 올림!
+   */
+
+  let result = Math.ceil(userNum / USER_PER_PAGE);
+
+  return result;
+};
