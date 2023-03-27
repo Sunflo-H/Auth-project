@@ -13,7 +13,8 @@
   height: 500px;
   padding: 50px;
   text-align: center;
-  background-color: white;
+  /* background-color: white; */
+  background-color: #f2f6fa;
   border-radius: 10px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
@@ -49,6 +50,11 @@ ul {
 .page-num {
   padding: 2px 4px;
   margin: 2px;
+}
+
+.page-num.active {
+  background-color: black;
+  color: white;
 }
 
 .profile {
