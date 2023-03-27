@@ -7,8 +7,6 @@ import {
   MdOutlineKeyboardDoubleArrowRight,
 } from "react-icons/md";
 
-const USER_PER_PAGE = 8;
-
 export default function Pagination({ currentPage, lastPage, onChange }) {
   const currentPages = getCurrentPages(currentPage, lastPage);
 
@@ -84,3 +82,4 @@ const getCurrentPages = (currentPage, lastPage) => {
 };
 
 const getNextPlusPage = (currentPage, lastPage) => {};
+const getPrevPlusPage = (currentPage, lastPage) => {};
