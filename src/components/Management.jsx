@@ -13,6 +13,7 @@ export default function Management() {
     users.push(i);
   }
   const [currentPage, setCurrentPage] = useState(1);
+  const [isEdit, setIsEdit] = useState(false);
   const lastPage = Math.ceil(users.length / USER_PER_PAGE);
   const handleChangePage = (newPage) => {
     setCurrentPage(newPage);
@@ -23,7 +24,7 @@ export default function Management() {
       <div className={styles.main}>
         <ul className="ul">
           {getCurrentUsers(users, currentPage).map((item, i) => (
-            <Card item={item} key={i} />
+            <Card item={item} isEdit={isEdit} key={i} />
           ))}
         </ul>
         <Pagination
@@ -35,6 +36,9 @@ export default function Management() {
       <Link to="/user/profile" className={styles.profile}>
         내 계정관리
       </Link>
+      <div className={styles.edit} onClick={() => setIsEdit(true)}>
+        수정하기
+      </div>
     </div>
   );
 }
@@ -43,16 +47,5 @@ const getCurrentUsers = (users, currentPage) => {
   const indexOfLastUser = currentPage * USER_PER_PAGE;
   const indexOfFirstUser = indexOfLastUser - USER_PER_PAGE;
   const result = users.slice(indexOfFirstUser, indexOfLastUser);
-  return result;
-};
-
-const getMaxPage = (userNum) => {
-  /**
-   * * 회원수 100일때 MaxPage 구하기
-   * (회원수 / 보여질 유저수) 올림!
-   */
-
-  let result = Math.ceil(userNum / USER_PER_PAGE);
-
   return result;
 };
