@@ -77,9 +77,11 @@ ul {
 
 .edit {
   position: absolute;
-  top: 10px;
-  right: -20px;
-  width: 10px;
+  top: 20px;
+  right: 20px;
+  background-color: #5d91f7;
+  padding: 5px;
+  border-radius: 5px;
   font-size: 1rem;
   font-weight: bold;
   color: white;
