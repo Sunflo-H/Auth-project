@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "../css/Profile.module.css";
 import { BsPencilFill } from "react-icons/bs";
+import { MdAdminPanelSettings } from "react-icons/md";
+import { BsFillShieldFill, BsFillKeyFill } from "react-icons/bs";
+import { RiShieldKeyholeFill, RiKeyFill } from "react-icons/ri";
 
 export default function Profile() {
   const [isAdmin, setIsAdmin] = useState(true);
@@ -11,6 +14,7 @@ export default function Profile() {
     name: "도지",
     email: "doge@google.com",
   });
+
   const handleClick = (e) => {
     const type = e.target.dataset.type;
     setIsEdit(type);
@@ -27,9 +31,16 @@ export default function Profile() {
   return (
     <div className={styles.position}>
       <div className={styles.main}>
-        <div className={styles["image-box"]}>
-          <img className={styles.image} src="/dog.png" />
-        </div>
+        <div className={styles.circle}></div>
+        {isAdmin && (
+          <div className={styles.admin}>
+            <RiKeyFill className={styles["admin-icon"]} />
+            Admin
+          </div>
+        )}
+
+        <img className={styles.image} src="/dog.png" />
+
         <div className={styles.info}>
           {isEdit === "name" ? (
             <input
@@ -69,10 +80,10 @@ export default function Profile() {
             </span>
           )}
 
-          <div style={{ backgroundColor: "orange", marginTop: "20px" }}>
+          {/* <div style={{ backgroundColor: "orange", marginTop: "20px" }}>
             닉네임
           </div>
-          <div style={{ backgroundColor: "orange" }}>패스워드</div>
+          <div style={{ backgroundColor: "orange" }}>패스워드</div> */}
         </div>
       </div>
 
