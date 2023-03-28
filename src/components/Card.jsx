@@ -3,6 +3,7 @@ import styles from "../css/Card.module.css";
 import { IoClose } from "react-icons/io5";
 
 export default function Card({ item, isEdit, isAni_show }) {
+  const [isAdmin, setIsAdmin] = useState(true);
   return (
     <div
       className={`${styles.card} ${isAni_show && styles["ani-show"]} ${
@@ -11,6 +12,7 @@ export default function Card({ item, isEdit, isAni_show }) {
     >
       <div className={styles.circle}></div>
       {isEdit && <IoClose className={styles.delete} />}
+      {isAdmin && <div className={styles.admin}>Admin</div>}
 
       {isEdit ? (
         <>
