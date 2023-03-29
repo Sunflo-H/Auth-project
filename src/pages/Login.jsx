@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "../css/Login.module.css";
 import { BiMessageCheck } from "react-icons/bi";
 import { BsGoogle } from "react-icons/bs";
@@ -13,7 +13,7 @@ export default function Login() {
     navigate("/user/profile");
   };
 
-  const isNoId = true;
+  const isNoId = false;
 
   if (isNoId) {
     return (
@@ -88,7 +88,9 @@ export default function Login() {
         </div>
         <div className={styles["sign-box"]}>
           <span>Do you want to join us?</span>
-          <button className={styles["signup"]}>Sign up</button>
+          <Link to="/signup" className={styles["signup"]}>
+            Sign up
+          </Link>
         </div>
       </div>
     </>

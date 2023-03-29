@@ -112,6 +112,8 @@
 }
 
 .sign-box {
+  position: absolute;
+  right: 0;
   display: flex;
   justify-content: end;
   align-items: center;
@@ -123,12 +125,10 @@
 
 .signup {
   border: none;
+  text-decoration: none;
   background-color: transparent;
-
   color: white;
   font-weight: bold;
   cursor: pointer;
-  /* border: 1px solid white;
-  border-radius: 5px; */
   margin-left: 5px;
 }
