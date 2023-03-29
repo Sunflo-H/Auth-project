@@ -63,28 +63,37 @@
   display: flex;
   justify-content: center;
 
-  gap: 4px;
-  margin-top: 100px;
+  gap: 10px;
+  margin-top: 50px;
 }
 
 .signup {
   background-color: #5d91f7;
   box-sizing: border-box;
   border: none;
-  padding: 15px;
+  padding: 15px 30px;
   border-radius: 5px;
   color: white;
   font-size: 1rem;
   cursor: pointer;
 }
 
+.signup:hover {
+  opacity: 0.9;
+}
+
 .cancel {
-  background-color: rgba(128, 128, 128, 0.298);
+  background-color: rgba(128, 128, 128, 0.4);
   box-sizing: border-box;
   border: none;
-  padding: 15px;
+  padding: 15px 30px;
   border-radius: 5px;
   color: white;
   font-size: 1rem;
   cursor: pointer;
+  text-decoration: none;
+}
+
+.cancel:hover {
+  opacity: 0.9;
 }

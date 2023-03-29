@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "../css/SignUp.module.css";
 import { BiMessageCheck } from "react-icons/bi";
 import { BsGoogle } from "react-icons/bs";
@@ -27,27 +27,32 @@ export default function SignUp() {
         >
           <input
             className={styles.input}
-            type="email"
+            type="text"
+            id="email"
             placeholder="Email address"
             required
           />
+
           <input
             className={styles.input}
             type="password"
+            id="password"
             placeholder="Password"
             required
           />
+
           <input
             className={styles.input}
             type="text"
+            id="nickname"
             placeholder="Nickname"
             required
           />
 
           <div className={styles["btn-box"]}>
-            <button className={`${styles.cancel}`}>
+            <Link to="/" className={`${styles.cancel}`}>
               <span>Cancel</span>
-            </button>
+            </Link>
             <button className={`${styles.signup}`}>
               <span>Sign Up</span>
             </button>
