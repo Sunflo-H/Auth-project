@@ -73,9 +73,22 @@ input[name="email"] {
   font-weight: bold;
 }
 
+.signout {
+  position: absolute;
+  left: 10px;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 .management {
   position: absolute;
-  right: 10px;
+  right: 0px;
+  display: flex;
+  align-items: center;
   margin-top: 10px;
   color: white;
   font-weight: bold;
@@ -83,6 +96,11 @@ input[name="email"] {
 }
 
 .icon {
+  font-size: 1.1rem;
+  margin-left: 4px;
+}
+
+.pen {
   position: absolute;
   top: 50%;
   margin-left: 5px;
@@ -92,8 +110,8 @@ input[name="email"] {
   color: rgba(0, 0, 0, 0.264);
 }
 
-.name:hover .icon,
-.email:hover .icon {
+.name:hover .pen,
+.email:hover .pen {
   display: inline;
 }
 

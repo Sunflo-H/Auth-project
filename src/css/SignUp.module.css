@@ -1,4 +1,4 @@
-.body {
+.position {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -29,19 +29,15 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 50px;
+
   width: 550px;
-  height: 400px;
+  height: 350px;
   margin: auto;
 
   text-align: center;
   background-color: white;
   border-radius: 10px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-.no {
-  height: 200px;
 }
 
 .form {
@@ -65,70 +61,39 @@
 
 .btn-box {
   display: flex;
-  flex-direction: column;
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
+  justify-content: center;
 
-.login {
-  background-color: #5d91f7;
-  box-sizing: border-box;
-  border: none;
-  padding: 15px;
-  border-radius: 5px;
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-.oauth {
-  position: relative;
-  display: flex;
-  align-items: center;
-  margin-top: 5px;
-  border: 1px solid rgba(128, 128, 128, 0.4);
-  border-radius: 5px;
-  background-color: transparent;
-  font-size: 1rem;
-  font-weight: bold;
-  padding: 0.5rem;
-  cursor: pointer;
-}
-
-.oauth span {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.kakao {
-  background-color: #ffed00;
-  border: none;
-}
-
-.oauth-icon {
-  font-size: 25px;
-}
-
-.sign-box {
-  position: absolute;
-  right: 0;
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  color: white;
-  font-weight: lighter;
-  padding-top: 20px;
-  padding-right: 10px;
+  gap: 10px;
+  margin-top: 30px;
 }
 
 .signup {
+  background-color: #5d91f7;
+  box-sizing: border-box;
   border: none;
-  text-decoration: none;
-  background-color: transparent;
+  padding: 15px 30px;
+  border-radius: 5px;
   color: white;
-  font-weight: bold;
+  font-size: 1rem;
   cursor: pointer;
-  margin-left: 5px;
+}
+
+.signup:hover {
+  opacity: 0.9;
+}
+
+.cancel {
+  background-color: rgba(128, 128, 128, 0.4);
+  box-sizing: border-box;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 5px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.cancel:hover {
+  opacity: 0.9;
 }

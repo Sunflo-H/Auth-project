@@ -4,6 +4,7 @@ import styles from "../css/Management.module.css";
 
 import { Link } from "react-router-dom";
 import Pagination from "./Pagination";
+import { MdAutorenew } from "react-icons/md";
 
 const USER_PER_PAGE = 8;
 export default function Management() {
@@ -40,15 +41,16 @@ export default function Management() {
         />
       </div>
       <Link to="/user/profile" className={styles.profile}>
-        내 계정관리
+        My Profile
+        <MdAutorenew className={styles.icon} />
       </Link>
       {isEdit ? (
         <div className={styles.edit} onClick={() => setIsEdit(false)}>
-          확인
+          Confirm
         </div>
       ) : (
         <div className={styles.edit} onClick={() => setIsEdit(true)}>
-          수정하기
+          Edit
         </div>
       )}
     </div>
