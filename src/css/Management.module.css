@@ -69,10 +69,17 @@ ul {
 .profile {
   position: absolute;
   right: 10px;
+  display: flex;
+  align-items: center;
   margin-top: 10px;
   color: white;
   font-weight: bold;
   cursor: pointer;
+}
+
+.icon {
+  font-size: 1.1rem;
+  margin-left: 4px;
 }
 
 .edit {

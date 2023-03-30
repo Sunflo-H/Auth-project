@@ -77,11 +77,11 @@ export default function Login() {
               <button className={`${styles.oauth} ${styles.google}`}>
                 <FcGoogle className={styles["oauth-icon"]} />
 
-                <span>Google로 시작하기</span>
+                <span>Login with Google</span>
               </button>
               <button className={`${styles.oauth} ${styles.kakao}`}>
                 <RiKakaoTalkFill className={styles["oauth-icon"]} />
-                <span>카카오로 시작하기</span>
+                <span>Login with Kakao </span>
               </button>
             </div>
           </form>
