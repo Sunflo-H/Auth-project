@@ -5,6 +5,7 @@ import { BsPencilFill } from "react-icons/bs";
 import { MdAdminPanelSettings } from "react-icons/md";
 import { BsFillShieldFill, BsFillKeyFill } from "react-icons/bs";
 import { RiShieldKeyholeFill, RiKeyFill } from "react-icons/ri";
+import { MdAutorenew, MdLogout } from "react-icons/md";
 
 export default function Profile() {
   const [isAdmin, setIsAdmin] = useState(true);
@@ -57,7 +58,7 @@ export default function Profile() {
               data-type="name"
             >
               {inputs.name}
-              <BsPencilFill className={styles.icon} />
+              <BsPencilFill className={styles.pen} />
             </span>
           )}
           <br />
@@ -76,21 +77,17 @@ export default function Profile() {
               data-type="email"
             >
               {inputs.email}
-              <BsPencilFill className={styles.icon} />
+              <BsPencilFill className={styles.pen} />
             </span>
           )}
-
-          {/* <div style={{ backgroundColor: "orange", marginTop: "20px" }}>
-            닉네임
-          </div>
-          <div style={{ backgroundColor: "orange" }}>패스워드</div> */}
         </div>
       </div>
-
-      {/* {isAdmin && <div className={styles.edit}>수정</div>} */}
+      <Link to="/" className={styles.signout}>
+        Sign out
+      </Link>
       {isAdmin && (
         <Link to="/user/management" className={styles.management}>
-          회원 관리
+          Management <MdAutorenew className={styles.icon} />
         </Link>
       )}
     </div>
